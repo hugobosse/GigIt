@@ -4,7 +4,6 @@ class CreateBars < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :genre
       t.string :address
-      t.date :availabilities
       t.integer :price
       t.string :description
 
