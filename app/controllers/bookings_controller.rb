@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.bar = Bar.find(params[:bar_id])
     if @booking.save
       redirect_to booking_path(@booking)
-    # else
+    # else  <------------------------------------ à voir sur quoi on render
       #to do render
     end
   end
@@ -20,6 +20,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    # to params : params.require(:booking).permit(:booking_date)
+    params.require(:booking).permit(:booking_date, :user_id, :bar_id)
   end
 end
