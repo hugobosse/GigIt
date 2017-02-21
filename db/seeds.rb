@@ -6,26 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.firs
 
+Booking.destroy_all
 Bar.destroy_all
 User.destroy_all
-genre = ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique"]
-price = (0..200).to_a
 
+genre = ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"]
+price = [0, 50, 100, 150, 200]
 
 50.times do
-  Bar.create(
-  name: Faker::Company.name
-  genre: genre.sample
-  address: Faker::Address.city
-  price: price.sample
+  Bar.create!(
+  name: Faker::Company.name,
+  genre: genre.sample,
+  address: Faker::Address.city,
+  price: price.sample,
   description: Faker::Lorem.paragraph
   )
 end
 
 50.times do
-  User.create(
-  name: Faker::GameOfThrones.character
-  email: Faker:Internet.email
-  description: Faker::Lorem.paragraph
+  User.create!(
+  username: Faker::GameOfThrones.character,
+  email: Faker::Internet.email,
+  description: Faker::Lorem.paragraph,
+  password: "testtest"
   )
 end
+
+# bien de mettre le point d ex pour lever erreur si ca pete dans le seed
