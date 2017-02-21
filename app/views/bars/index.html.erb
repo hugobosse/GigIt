@@ -1,2 +1,12 @@
-<h1>Bars#index</h1>
-<p>Find me in app/views/bars/index.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+    <% @bars.each do |b| %>
+      <%= render 'bar', bar: b %>
+    <!--   <%= render @bars %> en fait Rails comprend qu'il doit chercher une
+      collection et aller chercher un partial du même nom au singulier ainsi
+      qu'affecter au mot "bar" du partial la valeur de |b|.%> -->
+    <% end %>
+  </div>
+</div>
