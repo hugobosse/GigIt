@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
 
   devise_for :users
-  root to: 'pages#home'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :bars, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:create, :show]
   end
+
+  resources :bookings, only: [:index]
+
 end

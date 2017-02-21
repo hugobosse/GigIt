@@ -4,7 +4,7 @@ class CreateBars < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :genre
       t.string :address
-      t.integer :price
+      t.integer :price, default: 0
       t.string :description
 
       t.timestamps
