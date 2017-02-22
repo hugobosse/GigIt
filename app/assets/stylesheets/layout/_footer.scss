@@ -1,13 +1,17 @@
 #footer {
-  height: 20%;
+  height: 60px;
   background: #B7B5B3;
   color: #fff;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
 }
 #footer p {
   margin-top: 17px;
 }
 #footer ul {
   margin-top: 10px;
+  margin-bottom: 0px;
 }
 #footer a {
   color: #fff;
