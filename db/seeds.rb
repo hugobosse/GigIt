@@ -16,7 +16,7 @@ genre = ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classiq
 15.times do
   Bar.create!(
   name: Faker::Company.name,
-  genre: GENRES.sample,
+  genre: genre.sample,
   address: Faker::Address.city,
   price: price.sample,
   description: Faker::Lorem.paragraph
