@@ -9,6 +9,7 @@ class BarsController < ApplicationController
 
   def show
     @bookings = Booking.where(bar_id: @bar.id)
+
   end
 
   private

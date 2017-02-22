@@ -21,15 +21,15 @@
   right: 200px;
   font-size: 50px;
   }
-  .bar_rating {
-  position: absolute;
-  bottom: 20px;
-  font-size: 30px;
-  }
-  .bar_genre {
-  position : absolute;
-  top: 10px;
-  font-style: italic;
-  font-size: 60px;
+  .bar_specificities {
+    position: absolute;
+    bottom: 20px;
+    .bar_rating {
+      font-size: 30px;
+    }
+    .bar_genre {
+    text-decoration: underline;
+    font-size: 20px;
+    }
   }
 }
