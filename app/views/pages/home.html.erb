@@ -10,11 +10,12 @@
     </div>
   </div>
 </div>
+
 <div class="container-index">
   <div class="row">
-  <% @last_booked_bars.each do |b| %>
-    <%= render 'bars/bar', bar: b %>
-  <% end %>
+    <% @last_booked_bars.each do |b| %>
+      <%= render 'bars/bar', bar: b %>
+    <% end %>
   </div>
 </div>
 

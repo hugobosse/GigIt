@@ -37,6 +37,11 @@
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
+              <%= link_to bookings_path do %>
+                <i class="fa fa-eye"></i>  <%= t(".profile", default: "List of my booked Gigs") %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".profile", default: "Log Out") %>
               <% end %>

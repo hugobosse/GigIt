@@ -18,12 +18,18 @@
   .bar_price {
   position: absolute;
   bottom: 10px;
+  right: 200px;
   font-size: 50px;
   }
-  .bar_rating {
-  position: absolute;
-  bottom: 20px;
-  right: 200px;
-  font-size: 30px;
+  .bar_specificities {
+    position: absolute;
+    bottom: 20px;
+    .bar_rating {
+      font-size: 30px;
+    }
+    .bar_genre {
+    text-decoration: underline;
+    font-size: 20px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
   end
 
   def show
@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.bar = Bar.find(params[:bar_id])
+    #@booking.user = User.find(params[:user_id])
     if @booking.save
       redirect_to booking_path(@booking)
     # else  <------------------------------------ à voir sur quoi on render

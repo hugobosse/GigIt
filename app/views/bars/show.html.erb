@@ -11,10 +11,22 @@
       <%= @bar[:price] %>
       <i class="fa fa-eur" aria-hidden="true"></i>
     </div>
-    <div class="bar_rating">
-      <i class="fa fa-star" aria-hidden="true">
-        <%= "rating ici" %>
-      </i>
+    <div class="bar_specificities">
+      <div class="bar_genre">
+        <%= @bar.genre %>
+      </div>
+      <div class="bar_rating">
+        <%= @bar.artists.count %>
+        <i class="fa fa-user" aria-hidden="true"> - </i>
+        <% @all_ratings = [] %>
+        <% @bookings.each do |booking| %>
+          <% @all_ratings << booking[:bar_rating] %>
+        <% end %>
+        <% @bar_rating = @all_ratings.reduce(:+) / @all_ratings.length %>
+        <% @bar_rating.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -24,7 +36,19 @@
   </div>
 </div>
 
-<div class="bar_reviews">
-  <%= "ici liste des reviews" %>
+<div class="container">
+  <div class="bar_reviews">
+    <ul>
+      <% @bookings.each do |booking| %>
+        <li class="bar_review">
+            <h2> <%= booking.user.username %> </h2>
+            <p> <% booking.bar_rating.times do %>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            <% end %> </p> 
+            <p class=review > <%= booking.bar_review %> </p> 
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
