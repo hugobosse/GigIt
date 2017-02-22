@@ -1,0 +1,4 @@
+<%= simple_form_for [@bar, @booking] do |f| %>
+  <%= f.input :booking_date, as: :date, order: [:day, :month, :year] %>
+	<%= f.submit %>
+<% end %>
