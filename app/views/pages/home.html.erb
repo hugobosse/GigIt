@@ -1,16 +1,18 @@
-    <div class="wrapper">
-      <div class="banner">
-        <div class="banner-content">
-          <h1>Gig It !</h1>
-          <p>and lead your band to fame and glory</p>
-          <div class="search-bar"></div>
-        </div>
-      </div>
+
+<div class="wrapper">
+  <div class="banner">
+    <div class="banner-content">
+    <h1>Gig It !</h1>
+    <p>and lead your band to fame and glory</p>
+      <div class="search-bar"></div>
     </div>
-    <div class="container-index">
-      <div class="row">
-        <% @last_booked_bars.each do |b| %>
-          <%= render 'bars/bar', bar: b %>
-        <% end %>
-      </div>
-    </div>
+  </div>
+</div>
+<div class="container-index">
+  <div class="row">
+  <% @last_booked_bars.each do |b| %>
+    <%= render 'bars/bar', bar: b %>
+  <% end %>
+  </div>
+</div>
+
