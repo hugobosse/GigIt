@@ -18,6 +18,7 @@
               <% end %>
             </p>
             <%= render '/bars/bar', bar: booking.bar %>
+            <%= link_to "add a review", review_path(booking.id) %>
           </li>
         </ul>
       </div>

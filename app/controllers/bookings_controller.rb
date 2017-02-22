@@ -23,7 +23,26 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to bookings_path
+
+  def add_review
+    @booking = Booking.find(params[:id])
+
   end
+
+  def update_review
+    @booking = Booking.find(params[:id])
+    @booking.user_review = review_params[:user_review]
+    @booking.user_rating = review_params[:user_rating]
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :add_review
+    end
+  end
+
+  def update
+   #a voir si on utilise la methode
+   end
 
   private
 
@@ -33,5 +52,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:booking_date, :user_id, :bar_id)
+  end
+
+  def review_params
+    params.require(:booking).permit(:user_review, :user_rating)
   end
 end
