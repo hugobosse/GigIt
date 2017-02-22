@@ -10,20 +10,20 @@ Booking.destroy_all
 Bar.destroy_all
 User.destroy_all
 
-genre = ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"]
 price = [0, 50, 100, 150, 200]
+genre = ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"]
 
-50.times do
+15.times do
   Bar.create!(
   name: Faker::Company.name,
-  genre: genre.sample,
+  genre: GENRES.sample,
   address: Faker::Address.city,
   price: price.sample,
   description: Faker::Lorem.paragraph
   )
 end
 
-50.times do
+15.times do
   User.create!(
   username: Faker::GameOfThrones.character,
   email: Faker::Internet.email,
@@ -35,9 +35,9 @@ end
 @user = User.all
 @bar = Bar.all
 rating = [1, 2, 3, 4, 5]
-fakeid = rand(1..50)
+fakeid = rand(1..15)
 
-50.times do
+15.times do
   Booking.create!(
   booking_date: Faker::Date.between(300.days.ago, Date.today),
   bar_rating: rating.sample,
