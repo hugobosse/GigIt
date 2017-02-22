@@ -19,14 +19,31 @@ class BookingsController < ApplicationController
   end
 
   def add_review
-    @review = Review.new(review_params)
+    @booking = Booking.find(params[:id])
+
+  end
+
+  def update_review
+    @booking = Booking.find(params[:id])
+    @booking.user_review = review_params[:user_review]
+    @booking.user_rating = review_params[:user_rating]
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :add_review
+    end
+  end
+
+  def update
+    @bar = bar.find(params[:bar_id])
+
   # we need `restaurant_id` to asssociate review with corresponding restaurant
     @bar = bar.find(params[:bar_id])
     @review.bar = @bar
     if @review.save
       redirect_to bookings_path
     else
-      render :add_review
+      render :update
     end
   end
 
@@ -34,5 +51,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:booking_date, :user_id, :bar_id)
+  end
+
+  def review_params
+    params.require(:booking).permit(:user_review, :user_rating)
   end
 end

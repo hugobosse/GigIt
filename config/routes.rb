@@ -11,4 +11,8 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index]
 
+  get '/bookings/:id', to: 'bookings#add_review', as: 'review'
+  patch '/bookings/:id', to: 'bookings#update_review'
+  put '/bookings/:id', to: 'bookings#update_review'
+
 end
