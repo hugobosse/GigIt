@@ -1,6 +1,7 @@
 class Bar < ApplicationRecord
   validates :name, presence: true, uniqueness: { scope: :address }
   validates :address, presence: true
+  validates :capacity, presence: true
 
   has_many :bookings, dependent: :destroy
   belongs_to :user, optional: true

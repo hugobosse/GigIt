@@ -12,14 +12,17 @@ User.destroy_all
 
 price = [0, 50, 100, 150, 200]
 genre = ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"]
+capacity = [25, 50, 75, 100, 125]
+address = ["Bordeaux", "Paris"]
 
 15.times do
   Bar.create!(
   name: Faker::Company.name,
   genre: genre.sample,
-  address: Faker::Address.city,
+  address: address.sample,
   price: price.sample,
-  description: Faker::Lorem.paragraph
+  description: Faker::Lorem.paragraph,
+  capacity: capacity.sample
   )
 end
 
