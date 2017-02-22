@@ -1,4 +1,5 @@
 class Bar < ApplicationRecord
+
   validates :name, presence: true, uniqueness: { scope: :address }
   validates :address, presence: true
 

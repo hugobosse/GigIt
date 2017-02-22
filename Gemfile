@@ -31,3 +31,7 @@ end
 
 gem 'faker', '~> 1.6', '>= 1.6.6'
 
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
