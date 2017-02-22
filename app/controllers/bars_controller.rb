@@ -3,12 +3,7 @@ class BarsController < ApplicationController
 
 
   def index
-    @bars = Bar.all
-    if params[:search]
-      @bars = Bar.where("genre LIKE ?", params["search"["genre"]])
-    else
-      @bars = Bar.all
-    end
+    @bars = Bar.search(params)
   end
 
   def show
