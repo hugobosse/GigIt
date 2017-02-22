@@ -1,2 +1,30 @@
-<h1>Bars#show</h1>
-<p>Find me in app/views/bars/show.html.erb</p>
+
+<div class="banner_bar" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.sofizz.fr/blog/wp-content/uploads/2016/10/3.jpg');">
+  <div class="container">
+    <div class="bar_description">
+      <h1 class="bar_title"><%= @bar[:name] %></h1>
+      <div class="bar_address">
+        <%= @bar[:address] %>
+      </div>
+    </div>
+    <div class="bar_price">
+      <%= @bar[:price] %>
+      <i class="fa fa-eur" aria-hidden="true"></i>
+    </div>
+    <div class="bar_rating">
+      <i class="fa fa-star" aria-hidden="true">
+        <%= "rating ici" %>
+      </i>
+    </div>
+  </div>
+</div>
+<div class="googlemap_bar" style="background: url('https://i.stack.imgur.com/chfhv.png');">
+  <div class="container">
+  test
+  </div>
+</div>
+
+<div class="bar_reviews">
+  <%= "ici liste des reviews" %>
+</div>
+
