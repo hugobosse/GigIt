@@ -27,7 +27,11 @@
       <div class="dropdown">
         <% if user_signed_in? %>
           <% if current_user.facebook_picture_url.nil? %>
-            <%= image_tag "https://unsplash.it/300/300?image=1027", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% if current_user.photo.nil? %>
+              <%= image_tag 'User.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% else %>
+              <%=   cl_image_tag current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% end %>
           <% else %>
             <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>
@@ -35,6 +39,11 @@
             <li>
               <%= link_to bookings_path do %>
                 <i class="fa fa-eye"></i>  <%= t(".profile", default: "List of my booked Gigs") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user"></i>  <%= t(".profile", default: "Update my details") %>
               <% end %>
             </li>
             <li>

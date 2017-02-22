@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
   has_many :reviews
 
   validates :booking_date, presence: true
-  validates :user_id, presence: true
-  validates :bar_id, presence: true
+
+  validates :bar_rating, numericality: { only_integer: true }, on: :update
+
 end

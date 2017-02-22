@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
+
   root to: 'pages#home'
 
   devise_for :users,
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :show]
   end
 
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :destroy]
 
   get '/bookings/:id', to: 'bookings#add_review', as: 'review'
   patch '/bookings/:id', to: 'bookings#update_review'

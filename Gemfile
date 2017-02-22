@@ -17,6 +17,11 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'simple-form-datepicker', '~> 0.1.3'
+
+source "https://rails-assets.org" do
+	gem 'rails-assets-bootstrap-datepicker'
+end
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -31,3 +36,7 @@ end
 
 gem 'faker', '~> 1.6', '>= 1.6.6'
 
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'

@@ -1,9 +1,12 @@
 class Bar < ApplicationRecord
+
   validates :name, presence: true, uniqueness: { scope: :address }
   validates :address, presence: true
   validates :capacity, presence: true
 
   has_many :bookings, dependent: :destroy
+
+  has_many :rated_bookings, -> { where.not(bar_rating: nil) }, class_name: "Booking"
   belongs_to :user, optional: true
   # belongs to fait comme un validates avec presence true depuis rails 5
   # on peut le rendre optionnel avec optional true
@@ -23,6 +26,11 @@ class Bar < ApplicationRecord
     else
       @bars = Bar.all
     end
+  end
+
+  def ratings
+    return -1 if bookings.count.zero?
+    bookings.reduce(0) { |sum, b| sum += b.bar_rating.to_i }.fdiv(bookings.count).round()
   end
 end
 

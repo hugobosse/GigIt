@@ -18,18 +18,20 @@
       <div class="bar_rating">
         <%= @bar.artists.count %>
         <i class="fa fa-user" aria-hidden="true"> - </i>
-        <% @all_ratings = [] %>
-        <% @bookings.each do |booking| %>
-          <% @all_ratings << booking[:bar_rating] %>
-        <% end %>
-        <% @bar_rating = @all_ratings.reduce(:+) / @all_ratings.length %>
-        <% @bar_rating.times do %>
+        <% @bar.ratings.times do %>
           <i class="fa fa-star" aria-hidden="true"></i>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="form">
+    <%= render "/bookings/form" %>
+  </div>
+</div>
+
 <div id="bar-content">
   <div class="row">
     <div class="bar-description col-xs-12 col-sm-6">
@@ -38,13 +40,14 @@
     </div>
     <div class="googlemap_bar col-xs-12 col-sm-6" style="background: url('https://i.stack.imgur.com/chfhv.png');">
     </div>
+
   </div>
 </div>
 <div class="container">
   <h2 class="text-center">What other artists think about this bar</h2>
   <div class="bar_reviews">
     <ul>
-      <% @bookings.each do |booking| %>
+      <% @bar.rated_bookings.each do |booking| %>
         <li class="bar_review">
             <h2> <%= booking.user.username %> </h2>
             <p> <% booking.user_rating.times do %>

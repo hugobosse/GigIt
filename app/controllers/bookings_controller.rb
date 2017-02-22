@@ -1,22 +1,28 @@
 class BookingsController < ApplicationController
+
+  before_action :set_booking, only: [:show, :destroy]
   def index
     @bookings = current_user.bookings
   end
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.bar = Bar.find(params[:bar_id])
-    #@booking.user = User.find(params[:user_id])
+    @booking.user = current_user
+    @bar = Bar.find(params[:bar_id])
+    @booking.bar = @bar
     if @booking.save
-      redirect_to booking_path(@booking)
-    # else  <------------------------------------ à voir sur quoi on render
-      #to do render
+      redirect_to bookings_path, notice: "Your Booking is well created!"
+    else
+      render "bars/show"
     end
   end
+
+  def destroy
+    @booking.destroy
+    redirect_to bookings_path
 
   def add_review
     @booking = Booking.find(params[:id])
@@ -35,19 +41,14 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @bar = bar.find(params[:bar_id])
-
-  # we need `restaurant_id` to asssociate review with corresponding restaurant
-    @bar = bar.find(params[:bar_id])
-    @review.bar = @bar
-    if @review.save
-      redirect_to bookings_path
-    else
-      render :update
-    end
-  end
+   #a voir si on utilise la methode
+   end
 
   private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
   def booking_params
     params.require(:booking).permit(:booking_date, :user_id, :bar_id)
