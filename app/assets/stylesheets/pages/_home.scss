@@ -2,3 +2,27 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.banner {
+  height: 80vh;
+  background: linear-gradient(-225deg, rgba(249,212,35,0.6) 0%, rgba(255,78,80,0.5) 50%), url("https://source.unsplash.com/1600x900/?bar");
+  background-size: cover;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.banner h1 {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.banner p {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.container-index {
+  padding: 20px;
+}
