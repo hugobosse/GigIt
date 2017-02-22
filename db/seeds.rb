@@ -32,4 +32,20 @@ end
   )
 end
 
+@user = User.all
+@bar = Bar.all
+rating = [1, 2, 3, 4, 5]
+fakeid = rand(1..50)
+
+50.times do
+  Booking.create!(
+  booking_date: Faker::Date.between(300.days.ago, Date.today),
+  bar_rating: rating.sample,
+  bar_review: Faker::Lorem.paragraph,
+  user_rating: rating.sample,
+  user_review: Faker::Lorem.paragraph,
+  user_id: (@user.ids).sample,
+  bar_id: (@bar.ids).sample
+)
+end
 # bien de mettre le point d ex pour lever erreur si ca pete dans le seed
