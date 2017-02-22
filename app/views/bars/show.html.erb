@@ -25,6 +25,17 @@
 </div>
 
 <div class="bar_reviews">
-  <%= "ici liste des reviews" %>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li class="bar_review">
+          <h2> <%= booking.user.username %> </h2>
+          <p> <% booking.bar_rating.times do %>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          <% end %> </p> 
+          <p> <%= booking.bar_review %> </p> 
+      </li>
+    <% end %>
+  </ul>
 </div>
+
 
