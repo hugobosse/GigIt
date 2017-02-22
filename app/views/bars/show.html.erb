@@ -16,16 +16,16 @@
         <%= @bar.genre %>
       </div>
       <div class="bar_rating">
-        <i class="fa fa-star" aria-hidden="true">
-          <% @all_ratings = [] %>
-          <% @bookings.each do |booking| %>
-            <% @all_ratings << booking[:bar_rating] %>
-          <% end %>
-          <% @bar_rating = @all_ratings.reduce(:+) / @all_ratings.length %>
-          <% @bar_rating.times do %>
-            <i class="fa fa-star" aria-hidden="true"></i>
-          <% end %>
-        </i>
+        <%= @bar.artists.count %>
+        <i class="fa fa-user" aria-hidden="true"> - </i>
+        <% @all_ratings = [] %>
+        <% @bookings.each do |booking| %>
+          <% @all_ratings << booking[:bar_rating] %>
+        <% end %>
+        <% @bar_rating = @all_ratings.reduce(:+) / @all_ratings.length %>
+        <% @bar_rating.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %>
       </div>
     </div>
   </div>
