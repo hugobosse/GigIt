@@ -30,12 +30,16 @@
     </div>
   </div>
 </div>
-<div class="googlemap_bar" style="background: url('https://i.stack.imgur.com/chfhv.png');">
-  <div class="container">
-  test
+<div id="bar-content">
+  <div class="row">
+    <div class="bar-description col-xs-12 col-sm-6">
+      <h3> Description</h3><br>
+      <%= @bar.description  %>
+    </div>
+    <div class="googlemap_bar col-xs-12 col-sm-6" style="background: url('https://i.stack.imgur.com/chfhv.png');">
+    </div>
   </div>
 </div>
-
 <div class="container">
   <div class="bar_reviews">
     <ul>
@@ -44,11 +48,10 @@
             <h2> <%= booking.user.username %> </h2>
             <p> <% booking.bar_rating.times do %>
               <i class="fa fa-star" aria-hidden="true"></i>
-            <% end %> </p> 
-            <p class=review > <%= booking.bar_review %> </p> 
+            <% end %> </p>
+            <p class=review > <%= booking.bar_review %> </p>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
-
