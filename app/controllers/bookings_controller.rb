@@ -9,12 +9,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.bar = Bar.find(params[:bar_id])
-    #@booking.user = User.find(params[:user_id])
+    @booking.user = current_user
+    @bar = Bar.find(params[:bar_id])
+    @booking.bar = @bar
     if @booking.save
-      redirect_to booking_path(@booking)
-    # else  <------------------------------------ à voir sur quoi on render
-      #to do render
+      redirect_to bookings_path, notice: "Your Booking is well created!"
+    else
+      render "bars/show"
     end
   end
 
