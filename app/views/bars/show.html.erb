@@ -50,10 +50,10 @@
       <% @bar.rated_bookings.each do |booking| %>
         <li class="bar_review">
             <h2> <%= booking.user.username %> </h2>
-            <p> <% booking.user_rating.times do %>
+            <p> <% booking.bar_rating.times do %>
               <i class="fa fa-star" aria-hidden="true"></i>
             <% end %> </p>
-            <p class=review > <%= booking.user_review %> </p>
+            <p class=review > <%= booking.bar_review %> </p>
         </li>
       <% end %>
     </ul>

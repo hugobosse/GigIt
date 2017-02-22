@@ -23,18 +23,18 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to bookings_path
+  end
 
   def add_review
     @booking = Booking.find(params[:id])
-
   end
 
   def update_review
     @booking = Booking.find(params[:id])
-    @booking.user_review = review_params[:user_review]
-    @booking.user_rating = review_params[:user_rating]
+    @booking.bar_review = review_params[:bar_review]
+    @booking.bar_rating = review_params[:bar_rating]
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bar_path(@booking.bar)
     else
       render :add_review
     end
@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
 
   def update
    #a voir si on utilise la methode
-   end
+  end
 
   private
 
@@ -55,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def review_params
-    params.require(:booking).permit(:user_review, :user_rating)
+    params.require(:booking).permit(:bar_review, :bar_rating)
   end
 end

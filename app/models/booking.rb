@@ -5,6 +5,4 @@ class Booking < ApplicationRecord
 
   validates :booking_date, presence: true
 
-  validates :bar_rating, numericality: { only_integer: true }, on: :update
-
 end
