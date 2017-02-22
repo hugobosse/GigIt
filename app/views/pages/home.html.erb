@@ -1,2 +1,10 @@
-<h1>WELCOME!</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+  <%= simple_form_for :search, url: bars_path, method: "get" do |f|%>
+      <%= f.input :booking_date, as: :date%>
+      <%= f.input :address, placeholder: "Enter an address" %>
+      <%= f.input :genre, collection: ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"] %>
+      <%= f.submit "Get a Gig", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
