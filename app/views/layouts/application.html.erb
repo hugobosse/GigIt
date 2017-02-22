@@ -9,9 +9,9 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
-  <body style="padding-top: 70px">
+  <body>
     <%= render 'shared/navbar' %>
-    <p><%= render 'shared/flash' %></p>
+    <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
