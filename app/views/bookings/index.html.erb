@@ -7,6 +7,12 @@
             <h3>Rendez-vous au : <%= booking.bar.name %></h3>
             <p><%= booking.booking_date.strftime("Le %d/%m/%Y") %></p>
             <p>
+              Mais si vous avez un imprévu... Annulez en cliquant ici :
+              <%= link_to booking_path(booking), { class: "links", method: :delete } do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              <% end %>
+            </p>
+            <p>
               <% 10.times do %>
                 <%= '<i class="fa fa-music"></i>'.html_safe %>
               <% end %>
