@@ -1,0 +1,13 @@
+.form-box {
+  max-width: 800px;
+  display:flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  box-shadow: $box-shadow;
+  color: white;
+  padding: 30px;
+  margin-top: 80px;
+}
+
