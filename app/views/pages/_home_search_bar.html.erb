@@ -1,7 +1,10 @@
 <div class="col-sm-6 col-sm-offset-3">
-<%= simple_form_for :search, url: bars_path, method: "get" do |f|%>
-    <%= f.input :address, placeholder: "Enter a city" %>
+<%= simple_form_for :search, url: bars_path, method: "get", class: "form-inline" do |f|%>
+    <%= f.input :address, placeholder: "Enter a city", input_html: { id: 'autocomplete_address'} %>
     <%= f.input :genre, collection: ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"] %>
     <%= f.submit "Get a Gig", class: "btn btn-success" %>
   <% end %>
 </div>
+
+
+
