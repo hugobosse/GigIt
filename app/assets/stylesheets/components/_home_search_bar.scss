@@ -1,0 +1,31 @@
+.home_search_bar {
+  .neon-btn-home {
+  background: transparent;
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  color: $red;
+  font-size: 20px;
+  border: 2px solid #FF0000;
+  font-weight: 400;
+  text-shadow: 0 0 30px #EC637B,
+    0 0 10px rgba(230, 161, 173, 0.41),
+    0 0 100px #E6A1AD,
+    0 0 500px #F36780,
+    5px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+  .neon-btn-home:hover {
+    box-shadow: $box-shadow;
+  }
+  .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #FF0000;
+  color: $red;
+  font-weight: 200;
+  color: $red;
+  }
+}
+
+.form-control::-webkit-input-placeholder { /* Chrome */
+  color: red;
+}

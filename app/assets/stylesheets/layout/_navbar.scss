@@ -132,23 +132,31 @@
 }
 
 .neon-btn {
+  background: transparent;
   padding: 0 20px;
   border-radius: 5px;
   line-height: 40px;
-  background-color: #0A0A08;
   color: white;
-  font-size: 14px;
-  border: 2px solid #FF0000;
+  font-size: 20px;
+  border: 1px solid white;
+  font-weight: lighter;
+  text-shadow: 0 0 30px #EC637B,
+    0 0 10px rgba(230, 161, 173, 0.41),
+    0 0 100px #E6A1AD,
+    0 0 500px #F36780,
+    5px 9px 5px rgba(0, 0, 0, 0.5);
 }
-
 .neon-btn:hover {
-  color: white;
-  font-size: 14px;
-  border: 2px solid #FF0000;
+  border: 1px solid $red;
   box-shadow: $box-shadow;
-  background-color: #0A0A08;
+  color: white;
+  text-shadow: 0 0 30px #EC637B,
+    0 0 10px rgba(230, 161, 173, 0.41),
+    0 0 100px #E6A1AD,
+    0 0 500px #F36780,
+    5px 9px 5px rgba(0, 0, 0, 0.5);
 }
 
 .avatar {
-    box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
 }
