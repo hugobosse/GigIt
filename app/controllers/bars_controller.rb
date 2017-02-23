@@ -18,6 +18,6 @@ class BarsController < ApplicationController
   end
 
   def bar_params
-    params.require(:bar).permit(:name, :genre, :address, :price)
+    params.require(:bar).permit(:name, :genre, :address, :price, :photo)
   end
 end

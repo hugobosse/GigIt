@@ -13,6 +13,8 @@ class Bar < ApplicationRecord
   has_many :artists, through: :bookings, source: :user
   # has_many :users,  through: :bookings (ici on cree une meth artists)
 
+  has_attachment :photo
+
   def self.search(params)
     if params["search"]
       if params["search"]["genre"].present? || params["search"]["address"].present?
