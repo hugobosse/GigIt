@@ -1,13 +1,13 @@
 #footer {
   height: 60px;
-  background: #B7B5B3;
+  background: rgba(183,181,179, 0.8);
   color: #fff;
   bottom: 0px;
   position: absolute;
   width: 100%;
   position: fixed;
   left: 0px;
-  z-index: 1;
+  z-index: 200;
 }
 #footer p {
   margin-top: 17px;
