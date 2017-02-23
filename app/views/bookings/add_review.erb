@@ -1,6 +1,14 @@
-<h2>Add a review</h2>
-<%= simple_form_for @booking, url: review_path(@booking) do |f| %>
-  <%= f.input :bar_rating, collection: [1, 2, 3, 4, 5], as: :radio_buttons, item_wrapper_class: "radio-inline"%>
-  <%= f.input :bar_review %>
-  <%= f.submit "add a review", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <div class="form-box">
+              <h2>Add a review</h2>
+              <%= simple_form_for @booking, url: review_path(@booking) do |f| %>
+                <%= f.input :bar_rating, collection: [1, 2, 3, 4, 5], as: :radio_buttons, item_wrapper_class: "radio-inline"%>
+                <%= f.input :bar_review %>
+                <%= f.submit "add a review", class: "neon-btn" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
