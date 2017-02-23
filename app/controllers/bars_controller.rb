@@ -5,6 +5,12 @@ class BarsController < ApplicationController
 
   def index
     @bars = Bar.search(params)
+    @bars_geo = @bars.where.not( latitude: nil, longitude: nil )
+    @hash = Gmaps4rails.build_markers(@bars_geo) do |bar_geo, marker|
+      marker.lat bar_geo.latitude
+      marker.lng bar_geo.longitude
+    end
+      #marker.infowindow render_to_string(partial: "/bars/map_box", locals: { bar: bar })
   end
 
   def show

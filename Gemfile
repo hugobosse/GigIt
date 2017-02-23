@@ -21,6 +21,7 @@ gem 'simple-form-datepicker', '~> 0.1.3'
 
 source "https://rails-assets.org" do
 	gem 'rails-assets-bootstrap-datepicker'
+  gem 'rails-assets-underscore'
 end
 
 group :development, :test do
@@ -41,3 +42,5 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
+gem "geocoder"
+gem "gmaps4rails"
