@@ -15,8 +15,12 @@
   <h2> - - Last booked bars - - </h2>
   <div class="row">
     <% @last_booked_bars.each do |b| %>
-      <%= render 'bars/bar', bar: b %>
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/bar_card', bar: b %>
+      </div>
     <% end %>
   </div>
 </div>
+
+
 

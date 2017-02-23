@@ -1,23 +1,4 @@
 
 <div class="col-xs-12 col-sm-6">
-  <div class="card" style="background-image: url(<%=image_path 'Good5.jpg'%>)">
-    <%= link_to '', bar, { class: "card-link" }%>
-    <div class="card-bar">
-      <%= bar.name %> </br>
-      <%= bar.address %>
-    </div>
-    <div class="card-rating">
-
-    </div>
-    <div class="card-user-count">
-      <%= bar.artists.count%> Gig(s) ||
-      <i class="fa fa-user" aria-hidden="true"></i> Cap : <%= bar.capacity %>
-    </div>
-    <div class="card-price">
-      <%= bar.price %> €
-    </div>
-    <div class="card-genre">
-      <%= bar.genre.capitalize %>
-    </div>
-  </div>
+  <%= render 'shared/bar_card', bar: bar %>
 </div>

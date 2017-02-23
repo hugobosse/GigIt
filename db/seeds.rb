@@ -13,17 +13,19 @@ User.destroy_all
 price = [0, 50, 100, 150, 200]
 genre = ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"]
 capacity = [25, 50, 75, 100, 125]
-address = ["Bordeaux", "Paris"]
 
-15.times do
+bars = JSON.parse(open("db/bars.json","r").read)
+bars = bars.first(15)
+bars.each do |bar|
   Bar.create!(
-  name: Faker::Company.name,
+  name: bar["name"],
   genre: genre.sample,
-  address: address.sample,
+  address: bar["address"],
   price: price.sample,
-  description: Faker::Lorem.paragraph,
+  description: bar["description"],
   capacity: capacity.sample
   )
+  Bar.last.photo_url = bar["photo_url"]
 end
 
 15.times do
