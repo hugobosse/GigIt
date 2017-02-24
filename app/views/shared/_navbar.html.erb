@@ -1,10 +1,12 @@
 
 <div class="navbar-wagon navbar-wagon-fixed">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
-  <%= link_to 'Host Gigs', 'bars/new', { class: 'btn neon-btn', style: 'margin-left: -60%' } %>
+  <div>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
+    <%= link_to 'Host Gigs', 'bars/new', { class: 'btn neon-btn', style: "margin-left: 40px" } %>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
