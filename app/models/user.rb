@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :send_welcome_email
   has_attachment :photo
   has_attachment :video
   # Include default devise modules. Others available are:
@@ -36,5 +37,12 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  private
+
+  def send_welcome_email
+    raise
+    UserMailer.welcome(self).deliver_now
   end
 end
