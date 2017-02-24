@@ -4,18 +4,17 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-8">
-    <div class="row">
+
       <% @bars.each do |b| %>
         <div class="col-xs-12 col-sm-6">
           <%= render 'shared/bar_card', bar: b %>
         </div>
       <% end %>
-    </div>
   </div>
   <div  class="col-xs-12 col-sm-4">
     <div id="map" class="map_index" style="width: 33%; height: 100vh;"></div>
   </div>
-</div>
+
 
 
 <% content_for(:after_js) do %>
@@ -210,4 +209,4 @@
     </script>
   <% end %>
 </div>
-
+</div>
