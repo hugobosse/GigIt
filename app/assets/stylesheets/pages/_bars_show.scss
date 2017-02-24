@@ -1,3 +1,70 @@
 .bar-description {
   padding: 0 40px;
+  color: white;
+  h2 {
+  font-weight: lighter;
+  color: white;
+  font-size: 50px;
+  text-shadow: 0 0 30px #EC637B,
+    0 0 10px rgba(230, 161, 173, 0.41),
+    0 0 100px #E6A1AD,
+    0 0 500px #F36780,
+    5px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+  p {
+    font-weight: lighter;
+  }
 }
+.bar_reviews {
+  .review {
+  font-style: italic;
+  }
+  ul {
+    list-style-type: none;
+  }
+}
+.show-bar {
+  top: 10px;
+  color: white;
+  height: 110px;
+  margin-left: 40px;
+  h2 {
+  font-weight: lighter;
+  color: white;
+  font-size: 70px;
+  text-shadow: 0 0 30px #EC637B,
+    0 0 10px rgba(230, 161, 173, 0.41),
+    0 0 100px #E6A1AD,
+    0 0 500px #F36780,
+    5px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+  .star {
+    font-size: 20px;
+    color: white;
+  }
+  p {
+  font-weight: lighter;
+  }
+  .show-price {
+  right: 10px;
+  bottom: 10px;
+  font-weight: lighter;
+  font-size: 50px;
+  text-shadow: 0 0 30px #EC637B,
+    0 0 10px rgba(230, 161, 173, 0.41),
+    0 0 100px #E6A1AD,
+    0 0 500px #F36780,
+    5px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+ }
+.show {
+  height: 350px;
+  max-width: 100%;
+  margin-top: 10px;
+  background-size: cover !important;
+  background-position: center;
+  box-shadow: $box-shadow;
+  color: white;
+}
+
+

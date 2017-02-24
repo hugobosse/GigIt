@@ -1,46 +1,42 @@
-
-<div class="banner_bar" style="background: url(<%= cl_image_path @bar.photo.path %>);">
-  <div class="container">
-    <div class="bar_description">
-      <h1 class="bar_title"><%= @bar[:name] %></h1>
-      <div class="bar_address">
-        <%= @bar[:address] %>
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <div class="show-bar">
+      <h2>
+        <%= @bar.name %>
+        <div class="star">
+          <% @bar.ratings.times do %>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          <% end %>
+          -
+          <%= pluralize @bar.artists.count, "gig" %>
+        </div>
+      </h2>
+      <%= @bar.genre.capitalize %>
+      <div class="show-price">
+        <%= @bar.price %> €
+      </div>
+      <div class="home_search_bar">
+        <%= render "/bookings/form" %>
       </div>
     </div>
-    <div class="bar_price">
-      <%= @bar[:price] %>
-      <i class="fa fa-eur" aria-hidden="true"></i>
-    </div>
-    <div class="bar_specificities">
-      <div class="bar_genre">
-        <%= @bar.genre %>
-      </div>
-      <div class="bar_rating">
-        <%= @bar.artists.count %>
-        <i class="fa fa-user" aria-hidden="true"> - </i>
-        <% @bar.ratings.times do %>
-          <i class="fa fa-star" aria-hidden="true"></i>
-        <% end %>
-      </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="show" style="background: url(<%= cl_image_path @bar.photo.path %>);">
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="form">
-    <%= render "/bookings/form" %>
-  </div>
-</div>
-
-<div id="bar-content">
   <div class="row">
     <div class="bar-description col-xs-12 col-sm-6">
-      <h3> Description</h3><br>
-      <%= @bar.description  %>
+      <h2>Bar details</h2>
+      <p>Adresse : <%= @bar.address %></p>
+      <p>
+        Capactity : <%= @bar.capacity %> <i class="fa fa-user" aria-hidden="true"></i>
+      </p>
+      <p>Description : <%= @bar.description  %></p>
     </div>
-
     <div class="googlemap_bar col-xs-12 col-sm-6">
-      <div id="map" style="width: 100%; height: 250px;"></div>
+      <div id="map" style="width: 100%; height: 350px;"></div>
       <% content_for(:after_js) do %>
         <script>
           $(document).ready(function() {
@@ -233,16 +229,19 @@
         </script>
       <% end %>
     </div>
-
   </div>
-</div>
-<div class="container">
-  <h2 class="text-center">What other artists think about this bar</h2>
+
+
+
+
+
+<div class="bar-description">
+  <h2>What other artists think about this bar</h2>
   <div class="bar_reviews">
     <ul>
       <% @bar.rated_bookings.each do |booking| %>
         <li class="bar_review">
-            <h2> <%= booking.user.username %> </h2>
+            <p> <%= booking.user.username %> </p>
             <p> <% booking.bar_rating.times do %>
               <i class="fa fa-star" aria-hidden="true"></i>
             <% end %> </p>

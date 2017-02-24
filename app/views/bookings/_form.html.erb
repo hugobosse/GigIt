@@ -1,4 +1,4 @@
-<%= simple_form_for [@bar, @booking] do |f| %>
-  <%= f.input :booking_date, as: :date, order: [:day, :month, :year] %>
-	<%= f.submit %>
+<%= simple_form_for [@bar, @booking],  html: { class: "form-inline", style: "padding-top:40px"} do |f| %>
+  <%= f.input :booking_date, as: :date, label: false, order: [:day, :month, :year] %>
+	<%= f.submit "Book!", class: "btn neon-btn-home btn-outline-success btn-lg"%>
 <% end %>
