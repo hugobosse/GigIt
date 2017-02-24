@@ -1,5 +1,5 @@
 
-<div class="banner_bar" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.sofizz.fr/blog/wp-content/uploads/2016/10/3.jpg');">
+<div class="banner_bar" style="background: url(<%= cl_image_path @bar.photo.path %>);">
   <div class="container">
     <div class="bar_description">
       <h1 class="bar_title"><%= @bar[:name] %></h1>
