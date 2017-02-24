@@ -1,4 +1,14 @@
 <div class="container">
+  <% if current_user.video %>
+    <div class="row">
+      <div class="booking">
+        <h2>My artist's sample</h2>
+        <video class="col-sm-6 col-offset-3" controls style="padding: 30px">
+          <source src="http://res.cloudinary.com/dcacl3a06/video/upload/<%= current_user.video.path%>.webm" type="video/webm">
+        </video>
+      </div>
+    </div>
+  <% end %>
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="booking">
