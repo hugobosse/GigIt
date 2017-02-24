@@ -20,12 +20,13 @@ class Bar < ApplicationRecord
     if params["search"]
       if params["search"]["genre"].present? || params["search"]["address"].present?
         if params["search"]["genre"].empty?
-          @bars = Bar.where("address LIKE ? ", params["search"]["address"])
+          # @bars = Bar.where("address LIKE ? ", "%#{params["search"]["address"]}%")
+          @bars = Bar.near(params["search"]["address"], 20)
         elsif params["search"]["address"].empty?
           @bars = Bar.where("genre LIKE ? ", params["search"]["genre"])
         else
-          @bars = Bar.where("genre LIKE ? ", params["search"]["genre"])
-                     .where("address LIKE ? ", params["search"]["address"])
+          @bars = Bar.where("genre LIKE ? ", params["search"]["genre"]).near(params["search"]["address"], 20)
+                     # .where("address LIKE ? ", "%#{params["search"]["address"]}%")
         end
       else
         @bars = Bar.all

@@ -9,8 +9,8 @@ class BarsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@bars_geo) do |bar_geo, marker|
       marker.lat bar_geo.latitude
       marker.lng bar_geo.longitude
+      marker.infowindow render_to_string(partial: "/bars/map_box", locals: { bar: bar_geo })
     end
-      #marker.infowindow render_to_string(partial: "/bars/map_box", locals: { bar: bar })
   end
 
   def show

@@ -1,5 +1,5 @@
 <div class="home_search_bar">
-<%= simple_form_for :search, html: {class: "form-inline"}, url: bars_path, method: "get" do |f|%>
+  <%= simple_form_for :search, html: {class: "form-inline"}, url: bars_path, method: "get" do |f|%>
     <%= f.input :address, placeholder: "enter a city", label: false, input_html: { id: 'autocomplete_address'} %>
     <%= f.input :genre, collection: ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"], prompt: "genre", label: false %>
     <%= f.submit "Get a Gig!", class: "btn neon-btn-home btn-outline-success btn-lg" %>
