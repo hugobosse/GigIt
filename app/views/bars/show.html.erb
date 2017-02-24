@@ -20,10 +20,17 @@
       </div>
     </div>
   </div>
+  <% if @bar.photo %>
   <div class="col-xs-12 col-sm-6">
     <div class="show" style="background: url(<%= cl_image_path @bar.photo.path %>);">
     </div>
   </div>
+  <% else %>
+  <div class="col-xs-12 col-sm-6">
+    <div class="show" style="background: url(<%= image_path 'Good5.jpg' %>);">
+    </div>
+  </div>
+  <% end %>
 </div>
 
   <div class="row">

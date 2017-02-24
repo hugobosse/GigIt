@@ -1,4 +1,8 @@
+<% if bar.photo %>
 <div class="card" style="background: url(<%= cl_image_path bar.photo.path %>);">
+  <% else %>
+<div class="card" style="background: url(<%= image_path 'Good5.jpg' %>);">
+  <% end %>
   <%= link_to '', bar, { class: "card-link" } %>
   <div class="card-bar">
     <h2>
