@@ -1,29 +1,29 @@
-  <div class="card" style="background: url(<%= cl_image_path bar.photo.path %>);">
-    <%= link_to '', bar, { class: "card-link" } %>
-    <div class="card-bar">
-      <h2>
-        <%= bar.name %>
-        <small class="star">
-          <% bar.ratings.times do %>
-            <i class="fa fa-star" aria-hidden="true"></i>
-          <% end %>
-        </small>
-      </h2>
-      <p>
-        <%= bar.address %>
-      </p>
-    </div>
-    <div class="card-rating">
-
-    </div>
-    <div class="card-user-count">
-      <%= pluralize bar.artists.count, "gig" %> -
-      capactity <%= bar.capacity %> <i class="fa fa-user" aria-hidden="true"></i>
-    </div>
-    <div class="card-price">
-      <%= bar.price %> €
-    </div>
-    <div class="card-genre">
-      <%= bar.genre.capitalize %>
-    </div>
+<div class="card" style="background: url(<%= cl_image_path bar.photo.path %>);">
+  <%= link_to '', bar, { class: "card-link" } %>
+  <div class="card-bar">
+    <h2>
+      <%= bar.name %>
+      <small class="star">
+        <% bar.ratings.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %>
+      </small>
+    </h2>
+    <p>
+      <%= bar.address %>
+    </p>
   </div>
+  <div class="card-rating">
+
+  </div>
+  <div class="card-user-count">
+    <%= pluralize bar.artists.count, "gig" %> -
+    capactity <%= bar.capacity %> <i class="fa fa-user" aria-hidden="true"></i>
+  </div>
+  <div class="card-price">
+    <%= bar.price %> €
+  </div>
+  <div class="card-genre">
+    <%= bar.genre.capitalize %>
+  </div>
+</div>
