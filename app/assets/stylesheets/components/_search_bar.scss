@@ -1,0 +1,11 @@
+.search_bar {
+  position: fixed !important;
+  left: 25%;
+  top: 0px;
+  z-index: 100;
+  width: 50%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

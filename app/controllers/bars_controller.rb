@@ -9,6 +9,7 @@ class BarsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@bars_geo) do |bar_geo, marker|
       marker.lat bar_geo.latitude
       marker.lng bar_geo.longitude
+      marker.picture(url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png", width:  32, height: 32)
       marker.infowindow render_to_string(partial: "/bars/map_box", locals: { bar: bar_geo })
     end
   end
@@ -19,6 +20,7 @@ class BarsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@bar_geo) do |bar_geo, marker|
       marker.lat bar_geo.latitude
       marker.lng bar_geo.longitude
+      marker.picture(url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png", width:  32, height: 32)
       marker.infowindow render_to_string(partial: "/bars/map_box", locals: { bar: bar_geo })
     end
   end
