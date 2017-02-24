@@ -15,6 +15,12 @@ class BarsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @bar_geo = @bar
+    @hash = Gmaps4rails.build_markers(@bar_geo) do |bar_geo, marker|
+      marker.lat bar_geo.latitude
+      marker.lng bar_geo.longitude
+      marker.infowindow render_to_string(partial: "/bars/map_box", locals: { bar: bar_geo })
+    end
   end
 
   private

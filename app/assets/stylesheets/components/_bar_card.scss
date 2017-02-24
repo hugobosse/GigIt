@@ -5,49 +5,54 @@
   margin: 20px;
   border-radius: 5px;
   background-size: cover;
-  opacity: 0.3;
-  box-shadow: 0px 0px 30px -2px $red;
+  opacity: 0.75;
+  box-shadow: $box-shadow;
   color: white;
   &:hover {
     opacity: 0.9;
-    border: 2px solid $red;
-  }
-  h2 {
-  font-weight: bold;
-  font-size: 30px;
-  }
-  p {
-  font-weight: lighter;
   }
 }
-
 .card-price {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: lighter;
+  color: white;
 }
 .card-bar {
   position: absolute;
   top: 10px;
-  left: 10px;
-  font-size: 20px;
+  left: 20px;
+  color: white;
+  h2 {
+  font-weight: bold;
+  font-size: 30px;
+  .star {
+    margin: 5px;
+    color: white;
+  }
+  }
+  p {
   font-weight: lighter;
+  }
  }
 
 .card-user-count {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 20px;
   font-weight: lighter;
+  color: white;
 }
 
 .card-genre {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 40px;
+  right: 20px;
   font-style: italic;
   font-weight: lighter;
+  color: white;
 }
 
 .card-link {
@@ -57,4 +62,9 @@
   right: 0;
   width: 100%;
   z-index:2;
+  color: white;
+  &:hover {
+    border: 2px solid $red;
+    border-radius: 5px;
+  }
 }
