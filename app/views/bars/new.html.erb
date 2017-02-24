@@ -5,9 +5,9 @@
               <h2 class="index_title"> - Last booked bars - </h2>
               <%= simple_form_for @bar do |f| %>
                 <%= f.input :name %>
-                <%= f.input :address %>
+                <%= f.input :address, input_html: { id: 'autocomplete_address'}  %>
                 <%= f.input :genre, collection: Bar.genres %>
-                <%= f.input :capacity %>
+                <%= f.input :capacity, as: :integer, input_html: { min: "0" } %>
                 <%= f.input :price, as: :integer, input_html: { min: "0" } %>
                 <%= f.input :description %>
                 <%= f.input :photo, as: :attachinary %>
