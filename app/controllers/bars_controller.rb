@@ -1,7 +1,22 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show]
+
   skip_before_action :authenticate_user!, only: [:index, :show]
 
+  def new
+    @bar = Bar.new
+  end
+
+  def create
+    @bar = Bar.new(bar_params)
+    @bar.user = current_user
+    if @bar.save
+      #BarMailer.creation_confirmation(@bar).deliver_now
+      redirect_to @bar, notice: 'Get ready to host gigs a bar'
+    else
+      render :new
+    end
+  end
 
   def index
     @bars = Bar.search(params)
@@ -30,6 +45,6 @@ class BarsController < ApplicationController
   end
 
   def bar_params
-    params.require(:bar).permit(:name, :genre, :address, :price, :photo)
+    params.require(:bar).permit(:name, :genre, :address, :price, :photo, :capacity, :description)
   end
 end
