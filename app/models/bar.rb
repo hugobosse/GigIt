@@ -38,6 +38,10 @@ class Bar < ApplicationRecord
     return -1 if bookings.count.zero?
     bookings.reduce(0) { |sum, b| sum += b.bar_rating.to_i }.fdiv(bookings.count).round()
   end
+
+  def self.genres
+    ["jazz", "rock", "pop", "blues", "hip hop", "metal", "country", "classique", "tout genre"]
+  end
 end
 
 

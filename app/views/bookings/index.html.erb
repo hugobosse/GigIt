@@ -10,7 +10,7 @@
     </div>
   <% end %>
   <div class="row">
-    <% @bookings.each do |booking| %>
+    <% @bookings.order(booking_date: :asc).each do |booking| %>
       <div class="booking">
         <div class="col-xs-12 col-lg-6">
           <div class="booking-half">
